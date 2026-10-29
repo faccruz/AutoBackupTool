@@ -41,7 +41,8 @@ A ferramenta foi desenhada para ser 100% *portable* (executável único), rodand
 Se precisares de recompilar a aplicação a partir do código-fonte, abre o terminal na pasta do projeto e executa o seguinte comando de publicação:
 
 ```bash
-dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false
+dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false```
+
 O executável otimizado ficará disponível em:bin\Release\net8.0-windows\win-x64\publish\AutoBackupTool.exe
 
 ⚙️ Como Utilizar em Bancada
