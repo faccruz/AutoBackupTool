@@ -3,11 +3,15 @@ name: Build and Release AutoBackup Tool
 on:
   push:
     tags:
-      - 'v*' # Dispara automaticamente quando crias uma tag (ex: v1.0.0)
+      - 'v*'
+
+# Concede permissões explícitas para criar Releases
+permissions:
+  contents: write
 
 jobs:
   release:
-    runs-on: windows-latest # Usa um runner Windows para compilar WinForms perfeitamente
+    runs-on: windows-latest
 
     steps:
     - name: Clonar Repositório
@@ -16,14 +20,14 @@ jobs:
     - name: Configurar o .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x' # Altera para '9.0.x' se estiveres a usar o .NET 9
+        dotnet-version: '8.0.x'
 
     - name: Compilar e Publicar (Single-File Portable)
       run: |
         dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false
 
-    - name: Criar Release e Anexar o Executável
-      uses: softprops/action-gh-release@v1
+    - name: Criar Release e Anexar Executável
+      uses: softprops/action-gh-release@v2
       with:
         files: bin/Release/net8.0-windows/win-x64/publish/AutoBackupTool.exe
       env:
