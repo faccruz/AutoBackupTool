@@ -41,20 +41,24 @@ A ferramenta foi desenhada para ser 100% *portable* (executável único), rodand
 Se precisares de recompilar a aplicação a partir do código-fonte, abre o terminal na pasta do projeto e executa o seguinte comando de publicação:
 
 ```bash
-dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false```
+dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:PublishTrimmed=false
+```
 
-O executável otimizado ficará disponível em:bin\Release\net8.0-windows\win-x64\publish\AutoBackupTool.exe
+O executável otimizado ficará disponível em:
+`bin\Release\net8.0-windows\win-x64\publish\AutoBackupTool.exe`
 
-⚙️ Como Utilizar em Bancada
-Copia o ficheiro AutoBackupTool.exe para a raiz do teu pendrive de suporte técnico.
+---
 
-Na máquina do cliente, liga o pendrive e executa o programa.
+## ⚙️ Como Utilizar em Bancada
 
-Confirma a Origem (Perfil do utilizador ou diretório do disco do cliente) e o Destino (a pasta no teu pendrive).
+1. Copia o ficheiro **`AutoBackupTool.exe`** para a raiz do teu pendrive de suporte técnico.
+2. Na máquina do cliente, liga o pendrive e executa o programa.
+3. Confirma a **Origem** (Perfil do utilizador ou diretório do disco do cliente) e o **Destino** (a pasta no teu pendrive).
+4. Seleciona as pastas pretendidas ou adiciona diretórios personalizados extras.
+5. Clica em **INICIAR BACKUP** e acompanha o progresso em tempo real pelo log.
 
-Seleciona as pastas pretendidas ou adiciona diretórios personalizados extras.
+---
 
-Clica em INICIAR BACKUP e acompanha o progresso em tempo real pelo log.
+## 📝 Licença
 
-📝 Licença
 Este projeto é de uso livre para técnicos de informática e profissionais de suporte de TI. Sinta-se à vontade para adaptar e melhorar conforme as necessidades do seu fluxo de trabalho.
